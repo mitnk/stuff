@@ -1,10 +1,28 @@
 import os
 import os.path
+import pickle
 import re
 import urllib
 import urllib2
 
 from BeautifulSoup import BeautifulSoup
+
+def save_image_list_to_cache(dir_name, image_list):
+    if not image_list or not dir_name:
+        return
+    output = open('%s/image_list.pkl' % dir_name, 'wb')
+    pickle.dump(image_list, output)
+    output.close()
+
+def get_image_list_from_cache(dir_name):
+    try:
+        pkl_file = open('%s/image_list.pkl' % dir_name, 'rb')
+    except IOError:
+        return None
+
+    image_list = pickle.load(pkl_file)
+    pkl_file.close()
+    return image_list
 
 def get_chapter_list(url):
     page = urllib2.urlopen(url)
@@ -31,7 +49,7 @@ def get_chapter_list(url):
         download_all_images(url, chapter_name)
 
 
-def download_all_images(url, dir_name):
+def get_image_list(url):
     page = urllib2.urlopen(url)
     soup = BeautifulSoup(page)
     javascripts = soup.findAll(text=lambda text: text.parent.name == "script")
@@ -47,8 +65,13 @@ def download_all_images(url, dir_name):
     result = re.search(r'new Array\(([^;]+)\);', image_script)
     if not result:
         print "Image SRC not found."
+    return result.group(1).replace('"', '').split(',')
 
-    image_list = result.group(1).replace('"', '').split(',')
+def download_all_images(url, dir_name):
+    image_list = get_image_list_from_cache(dir_name)
+    if not image_list:
+        image_list = get_image_list(url)
+        save_image_list_to_cache(dir_name, image_list)
 
     # Check exist directory and its files
     number_from = 0
@@ -57,14 +80,14 @@ def download_all_images(url, dir_name):
         print u"Created directory: %s" % dir_name
     else:
         images_existing = os.listdir(dir_name)
-        if len(image_list) == len(images_existing):
-            print u"%s seems already finised, skip this chapter." % dir_name
+        # -1 for image_list.pkl file in the same directory
+        if len(image_list) == len(images_existing) - 1:
+            print u"%s seems already finished, skip this chapter." % dir_name
             return
         else:
             number_from = len(images_existing) - 1
 
     print "Begin to download %s ..." % dir_name
-
     print "Total images to download: %s" % (len(image_list) - number_from)
 
     host = "http://54.manmankan.com"
