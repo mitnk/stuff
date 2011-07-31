@@ -32,16 +32,6 @@ def get_chapter_list(url):
 
 
 def download_all_images(url, dir_name):
-    if not os.path.exists(dir_name):
-        os.makedirs(dir_name)
-        print "Created directory: %s" % dir_name
-    else:
-        if os.listdir(dir_name):
-            print "Non-Empty directory %s exists, skip this chapter." % dir_name
-            return
-
-    print "Begin to download %s ..." % dir_name
-
     page = urllib2.urlopen(url)
     soup = BeautifulSoup(page)
     javascripts = soup.findAll(text=lambda text: text.parent.name == "script")
@@ -59,13 +49,29 @@ def download_all_images(url, dir_name):
         print "Image SRC not found."
 
     image_list = result.group(1).replace('"', '').split(',')
-    print "Total Images: %s" % len(image_list)
+
+    # Check exist directory and its files
+    number_from = 0
+    if not os.path.exists(dir_name):
+        os.makedirs(dir_name)
+        print u"Created directory: %s" % dir_name
+    else:
+        images_existing = os.listdir(dir_name)
+        if len(image_list) == len(images_existing):
+            print u"%s seems already finised, skip this chapter." % dir_name
+            return
+        else:
+            number_from = len(images_existing) - 1
+
+    print "Begin to download %s ..." % dir_name
+
+    print "Total images to download: %s" % (len(image_list) - number_from)
 
     host = "http://54.manmankan.com"
     bad_images = 0
-    count_downloaded = 0
+    count_downloaded = number_from
     first_image_is_invalid = False
-    for image_src in image_list:
+    for image_src in image_list[number_from:]:
         num = str("%3d" % count_downloaded).replace(' ', '0')
         image_ext = image_src.split(".")[-1]
         local_file_name = "%s/%s.%s" % (dir_name, num, image_ext)
@@ -98,4 +104,4 @@ def download_all_images(url, dir_name):
             print "Downloaded:", local_file_name
 
 if __name__ == "__main__":
-    get_chapter_list("http://www.manmankan.com/html/409/index.asp")
+    get_chapter_list("http://www.manmankan.com/html/381/index.asp")
