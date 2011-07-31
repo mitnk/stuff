@@ -68,31 +68,33 @@ def get_image_list(url):
     return result.group(1).replace('"', '').split(',')
 
 def download_all_images(url, dir_name):
+    if not os.path.exists(dir_name):
+        os.makedirs(dir_name)
+        print u"Created directory: %s" % dir_name
+
+    # Save image_list to cache, no need fetching from website everytime
     image_list = get_image_list_from_cache(dir_name)
     if not image_list:
         image_list = get_image_list(url)
         save_image_list_to_cache(dir_name, image_list)
 
-    # Check exist directory and its files
+    # -1 for image_list.pkl file in the same directory
+    image_count_existing = len(os.listdir(dir_name)) - 1
+    if len(image_list) == image_count_existing:
+        print u"%s seems already finished, skip this chapter." % dir_name
+        return
+
     number_from = 0
-    if not os.path.exists(dir_name):
-        os.makedirs(dir_name)
-        print u"Created directory: %s" % dir_name
-    else:
-        images_existing = os.listdir(dir_name)
-        # -1 for image_list.pkl file in the same directory
-        if len(image_list) == len(images_existing) - 1:
-            print u"%s seems already finished, skip this chapter." % dir_name
-            return
-        else:
-            number_from = len(images_existing) - 1
+    if image_count_existing != 0:
+        # Let's fetch from the last image, in case it's not fully downloaded
+        number_from = image_count_existing - 1
 
     print "Begin to download %s ..." % dir_name
     print "Total images to download: %s" % (len(image_list) - number_from)
 
     host = "http://54.manmankan.com"
     bad_images = 0
-    count_downloaded = number_from
+    count_downloaded = number_from + 1
     first_image_is_invalid = False
     for image_src in image_list[number_from:]:
         num = str("%3d" % count_downloaded).replace(' ', '0')
