@@ -1,9 +1,14 @@
+##################################################
+## Get Images from manmankan
+## Author: whgking@gmail.com
+##################################################
 import os
 import os.path
 import pickle
 import re
 import urllib
 import urllib2
+import time
 
 from BeautifulSoup import BeautifulSoup
 
@@ -96,12 +101,17 @@ def download_all_images(url, dir_name):
     bad_images = 0
     count_downloaded = number_from + 1
     first_image_is_invalid = False
+    time_list = []
     for image_src in image_list[number_from:]:
         num = str("%3d" % count_downloaded).replace(' ', '0')
         image_ext = image_src.split(".")[-1]
         local_file_name = "%s/%s.%s" % (dir_name, num, image_ext)
         url = host + image_src
+
+        t = time.time()
         urllib.urlretrieve(url, local_file_name)
+        time_list.append(time.time() - t)
+        time.sleep(2) # Sleep 2 seconds to download gently
         
         # Image too small, means it is bad images (Smaller than 10K)
         # Sometimes, valid images also are very small, 
@@ -126,7 +136,8 @@ def download_all_images(url, dir_name):
         count_downloaded += 1
 
         if count_downloaded % 10 == 1:
-            print "Downloaded:", local_file_name
+            print "Downloaded: %s, Speed: %.3fs per image" % (local_file_name, sum(time_list) / len(time_list))
+            time_list = []
 
 if __name__ == "__main__":
-    get_chapter_list("http://www.manmankan.com/html/381/index.asp")
+    get_chapter_list("http://www.manmankan.com/html/13/")
