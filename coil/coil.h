@@ -47,7 +47,7 @@ public:
 protected:
     bool GoodSquare(const int x, const int y);
 
-    bool HaveTwoDirect(const int x, const int y, int & direction);
+    bool HaveTwoDirect(const int x, const int y, int & direction, bool& flag);
 
 	void GetGoodDirection(const int x, const int y);
     void PrintBoard();
@@ -55,6 +55,7 @@ protected:
 	bool CheckOneArea();
     bool HaveMoreSingleDirectionNode();
     int CountDirect(const int x, const int y);
+    bool HaveTwoSameDirect(const int x, const int y);
 	bool HaveMoreZero();
 
 	bool GoodSquareCheck(const int x, const int y);

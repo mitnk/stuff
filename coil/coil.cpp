@@ -29,15 +29,6 @@ Coil::Coil(int x, int y, string board) : X(x), Y(y)
     }
 
 	m_vBd = m_vBoard;
-    PrintBoard();
-    for (int j = 0; j < Y; j++)
-    {
-        for (int i = 0; i < X; i++)
-        {
-            if (m_vBd[i][j] == 0 && CountDirect(i, j) == 1)
-                cout << "(" << i << ", " << j << ")" << endl;
-        }
-    }
 }
 
 void Coil::PrintBoard()
@@ -60,6 +51,7 @@ void Coil::FindPath(const int cx, const int cy, string& solution)
 	{
 		return;
 	}
+
     //cout << "Begin " << cx << ", " << cy << endl;
 
 	for (int i = 0; i < 4; ++i)
@@ -81,6 +73,7 @@ void Coil::FindPath(const int cx, const int cy, string& solution)
         int nFilled = 1;
         int direction;
         int offx, offy;
+        bool one_direction_vs_two_direction = false;
 
         if (m_stackPath.empty())
         {
@@ -149,8 +142,10 @@ void Coil::FindPath(const int cx, const int cy, string& solution)
                 break;
             }
 
-            bool bTwoDirection = HaveTwoDirect(x, y, direction);
-            if (bTwoDirection)
+            // Change the direciton
+            one_direction_vs_two_direction = false;
+            bool bTwoDirection = HaveTwoDirect(x, y, direction, one_direction_vs_two_direction);
+            if (bTwoDirection && !one_direction_vs_two_direction)
             {
                 m_stackPath.push(BranchPoint(x, y, (direction + 2) % 4, path, nFilled, m_vBd));
             }
@@ -172,7 +167,22 @@ int Coil::CountDirect(const int x, const int y)
 	return count;
 }
 
-bool Coil::HaveTwoDirect(const int x, const int y, int & direction)
+bool Coil::HaveTwoSameDirect(const int x, const int y)
+{
+    int xcount = 0;
+    int ycount = 0;
+    if (GoodSquare(x, y + 1))
+        ycount ++;
+    if (GoodSquare(x, y - 1))
+        ycount ++;
+    if (GoodSquare(x - 1, y))
+        xcount ++;
+    if (GoodSquare(x + 1, y))
+        xcount ++;
+	return (xcount == 0 && ycount == 2) || (ycount == 0 && xcount == 2);
+}
+
+bool Coil::HaveTwoDirect(const int x, const int y, int & direction, bool& flag)
 {
     int count = 0;
     // left or right
@@ -191,6 +201,19 @@ bool Coil::HaveTwoDirect(const int x, const int y, int & direction)
             count ++;
             direction = 3; // up
         }
+        if (count == 2)
+        {
+            if (CountDirect(x, y + 1) == 1 && CountDirect(x, y - 1) > 1)
+            {
+                flag = true;
+                direction = 1;
+            }
+            else if (CountDirect(x, y + 1) > 1 && CountDirect(x, y - 1) == 1)
+            {
+                flag = true;
+                direction = 3;
+            }
+        }
     }
     else // up or down
     {
@@ -205,7 +228,21 @@ bool Coil::HaveTwoDirect(const int x, const int y, int & direction)
             count ++;
             direction = 2; // right
         }
+        if (count == 2)
+        {
+            if (CountDirect(x - 1, y) == 1 && CountDirect(x + 1, y) > 1)
+            {
+                flag = true;
+                direction = 0;
+            }
+            else if (CountDirect(x - 1, y) > 1 && CountDirect(x + 1, y) == 1)
+            {
+                flag = true;
+                direction = 2;
+            }
+        }
     }
+
 
 	return count == 2;
 }
