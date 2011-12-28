@@ -4,38 +4,19 @@
 void merge(int a[], int b[], int left, int mid, int right)
 {
     int i, j, k;
-    j = left;
-    k = mid + 1;
     for (i=left; i<=right; ++i)
-    {
-        if (j <= mid && k <= right)
-        {
-            if (a[j] > a[k])
-            {
-                b[i] = a[k];
-                ++k;
-            }
-            else
-            {
-                b[i] = a[j];
-                ++j;
-            }
-        }
-        else if (j <= mid)
-        {
-            b[i] = a[j];
-            ++j;
-        }
-        else if (k <= right)
-        {
-            b[i] = a[k];
-            ++k;
-        }
-    }
-    for (i=left; i<=right; ++i)
-    {
-        a[i] = b[i];
-    }
+        b[i] = a[i];
+
+    i = k = left;
+    j = mid + 1;
+    while(i <= mid && j <= right)
+        if (b[i] > b[j])
+            a[k++] = b[j++];
+        else
+            a[k++] = b[i++];
+
+    while(i <= mid)
+        a[k++] = b[i++];
 }
 
 void merge_sort(int a[], int b[], int left, int right)
