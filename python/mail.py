@@ -14,7 +14,7 @@ class GSMTP(object):
         self.username = username
         self.password = password
 
-    def send_mail(send_to, subject, text="", html=None, files=[], fail_silently=False):
+    def send_mail(self, send_to, subject, text="", html=None, files=[], fail_silently=False):
         assert (type(send_to) == list or type(send_to) == tuple)
         assert (type(files) == list or type(files) == tuple)
 
@@ -46,7 +46,7 @@ class GSMTP(object):
             smtp.starttls()
             smtp.ehlo()
             smtp.login(smtpuser, smtppass)
-            smtp.sendmail(self.username)
+            smtp.sendmail(self.username, send_to, msg.as_string())
             smtp.quit()
         except:
             if not fail_silently:
