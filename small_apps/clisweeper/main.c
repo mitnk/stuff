@@ -3,7 +3,7 @@
 
 int main()
 {
-    struct stone mines[10][10];
+    struct stone mines[X][Y];
     init_mines(mines);
     place_mines(mines);
     print_mines(mines, 0);
