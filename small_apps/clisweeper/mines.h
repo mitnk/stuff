@@ -1,5 +1,6 @@
 #define ERROR_MINE 1
 #define ERROR_ALREADY_OPENED 2
+#define FINISHED 10
 
 struct stone {
     char is_open;

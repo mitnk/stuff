@@ -73,6 +73,30 @@ void place_mines(struct stone mines[][10])
     }
 }
 
+void open_around_stones(struct stone mines[][10], int x, int y)
+{
+    int offset_x, offset_y;
+    int sum = 0;
+    for (offset_x = -1; offset_x <= 1; ++offset_x)
+    {
+        for (offset_y = -1; offset_y <= 1; ++offset_y)
+        {
+            if (offset_x == 0 && offset_y == 0)
+                continue;
+
+
+            if (x + offset_x >= 0 && x + offset_x <= 9 &&
+                y + offset_y >= 0 && y + offset_y <= 9 &&
+                mines[x + offset_x][y + offset_y].is_open == 0)
+            {
+                sum = count_number(mines, x + offset_x, y + offset_y);
+                if (sum == 0)
+                    open_around_stones(mines, x + offset_x, y + offset_y);
+            }
+        }
+    }
+}
+
 int count_number(struct stone mines[][10], int x, int y)
 {
     // 数一数周围八个点有几个雷
@@ -90,7 +114,25 @@ int count_number(struct stone mines[][10], int x, int y)
             }
         }
     }
+    mines[x][y].value = sum;
+    mines[x][y].is_open = 1;
     return sum;
+}
+
+int is_finished(struct stone mines[][10])
+{
+    int x = 0;
+    int y = 0;
+    int sum = 0;
+    for (y = 0; y < 10; ++y)
+    {
+        for (x = 0; x < 10; ++x)
+        {
+            if (!mines[x][y].is_open)
+                ++sum;
+        }
+    }
+    return sum == 10;
 }
 
 int check_stone(struct stone mines[][10], int x, int y)
@@ -105,8 +147,13 @@ int check_stone(struct stone mines[][10], int x, int y)
     }
     else
     {
-        mines[x][y].value = count_number(mines, x, y);
-        mines[x][y].is_open = 1;
+        int result = count_number(mines, x, y);
+        if (result == 0)
+        {
+            open_around_stones(mines, x, y);
+        }
+        if (is_finished(mines))
+            return FINISHED;
         return 0;
     }
     return 0;

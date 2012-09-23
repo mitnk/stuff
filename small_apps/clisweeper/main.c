@@ -12,7 +12,7 @@ int main()
     int result = 0;
     while (1)
     {
-        printf("Please input x y:");
+        printf("Please input x y: ");
         scanf("%d", &x);
         scanf("%d", &y);
         result = check_stone(mines, x, y);
@@ -27,15 +27,24 @@ int main()
         }
         else if (result == ERROR_ALREADY_OPENED)
         {
-            printf("\n\n=== Already Opened ===\n\n");
+            printf("=== Already Opened ===\n");
             continue;
+        }
+        else if (result == FINISHED)
+        {
+            printf("\n\n");
+            printf("===========================\n");
+            printf("==== Congratulation!!! ====\n");
+            printf("===========================\n");
+            print_mines(mines, 1);
+            break;
         }
         else
         {
-            printf("\n\n");
+            printf("\n");
             printf("----------------------\n");
             printf("|     Good Job!      |\n");
-            printf("----------------------\n\n");
+            printf("----------------------\n");
         }
         print_mines(mines, 0);
     }
