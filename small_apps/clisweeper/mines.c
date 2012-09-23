@@ -9,13 +9,14 @@ void get_random_x_y(int *x, int *y)
     *y = (char)(drand48() * 10);
 }
 
-void print_mines(struct stone mines[][10])
+void print_mines(struct stone mines[][10], int show_all)
 {
     int x = 0;
     int y = 0;
-    for (x = 0; x < 10; ++x)
+    printf("\n");
+    for (y = 0; y < 10; ++y)
     {
-        for (y = 0; y < 10; ++y)
+        for (x = 0; x < 10; ++x)
         {
             if (mines[x][y].is_open)
             {
@@ -25,10 +26,16 @@ void print_mines(struct stone mines[][10])
                     printf("%d ", mines[x][y].value);
             }
             else
-                printf("■ ");
+            {
+                if (mines[x][y].value == -1 && show_all == 1)
+                    printf("x ");
+                else
+                    printf("■ ");
+            }
         }
         printf("\n");
     }
+    printf("\n");
 }
 
 void init_mines(struct stone mines[][10])
@@ -39,7 +46,7 @@ void init_mines(struct stone mines[][10])
     {
         for (y = 0; y < 10; ++y)
         {
-            mines[x][y].is_open = 1;
+            mines[x][y].is_open = 0;
             mines[x][y].value = 0;
         }
     }
@@ -66,23 +73,41 @@ void place_mines(struct stone mines[][10])
     }
 }
 
-void check_stone(struct stone mines[][10], x, y)
+int count_number(struct stone mines[][10], int x, int y)
 {
-    int x = 0;
-    int y = 0;
-    int i = 0;
-    srand48(time(0));
-    for (i = 0; i < 10; ++i)
+    // 数一数周围八个点有几个雷
+    int sum = 0;
+    int offset_x, offset_y;
+    for (offset_x = -1; offset_x <= 1; ++offset_x)
     {
-        get_random_x_y(&x, &y);
-        if (mines[x][y].value == -1)
+        for (offset_y = -1; offset_y <= 1; ++offset_y)
         {
-            --i;
-            continue;
-        }
-        else
-        {
-            mines[x][y].value = -1;
+            if (x + offset_x >= 0 && x + offset_x <= 9 &&
+                y + offset_y >= 0 && y + offset_y <= 9)
+            {
+                if (mines[x + offset_x][y + offset_y].value == -1)
+                    sum += 1;
+            }
         }
     }
+    return sum;
+}
+
+int check_stone(struct stone mines[][10], int x, int y)
+{
+    if (mines[x][y].is_open)
+    {
+        return ERROR_ALREADY_OPENED;
+    }
+    else if (mines[x][y].value == -1)
+    {
+        return ERROR_MINE;
+    }
+    else
+    {
+        mines[x][y].value = count_number(mines, x, y);
+        mines[x][y].is_open = 1;
+        return 0;
+    }
+    return 0;
 }
