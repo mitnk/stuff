@@ -13,9 +13,13 @@ void print_mines(struct stone mines[][10], int show_all)
 {
     int x = 0;
     int y = 0;
-    printf("\n");
+    printf("\n■ x ");
+    for (x = 0; x < 10; ++x)
+        printf("%d ", x);
+    printf("\ny\n");
     for (y = 0; y < 10; ++y)
     {
+        printf("%d   ", y);
         for (x = 0; x < 10; ++x)
         {
             if (mines[x][y].is_open)
