@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'HelloOC' target in the 'HelloOC' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif

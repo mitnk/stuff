@@ -1,0 +1,241 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6750E44B164BB73B00D2D463 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6750E44A164BB73B00D2D463 /* Foundation.framework */; };
+		6750E44E164BB73B00D2D463 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6750E44D164BB73B00D2D463 /* main.m */; };
+		6750E452164BB73B00D2D463 /* HelloOC.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6750E451164BB73B00D2D463 /* HelloOC.1 */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6750E444164BB73B00D2D463 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				6750E452164BB73B00D2D463 /* HelloOC.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		6750E446164BB73B00D2D463 /* HelloOC */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = HelloOC; sourceTree = BUILT_PRODUCTS_DIR; };
+		6750E44A164BB73B00D2D463 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		6750E44D164BB73B00D2D463 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6750E450164BB73B00D2D463 /* HelloOC-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HelloOC-Prefix.pch"; sourceTree = "<group>"; };
+		6750E451164BB73B00D2D463 /* HelloOC.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = HelloOC.1; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6750E443164BB73B00D2D463 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6750E44B164BB73B00D2D463 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6750E43B164BB73B00D2D463 = {
+			isa = PBXGroup;
+			children = (
+				6750E44C164BB73B00D2D463 /* HelloOC */,
+				6750E449164BB73B00D2D463 /* Frameworks */,
+				6750E447164BB73B00D2D463 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6750E447164BB73B00D2D463 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6750E446164BB73B00D2D463 /* HelloOC */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6750E449164BB73B00D2D463 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6750E44A164BB73B00D2D463 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6750E44C164BB73B00D2D463 /* HelloOC */ = {
+			isa = PBXGroup;
+			children = (
+				6750E44D164BB73B00D2D463 /* main.m */,
+				6750E451164BB73B00D2D463 /* HelloOC.1 */,
+				6750E44F164BB73B00D2D463 /* Supporting Files */,
+			);
+			path = HelloOC;
+			sourceTree = "<group>";
+		};
+		6750E44F164BB73B00D2D463 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6750E450164BB73B00D2D463 /* HelloOC-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6750E445164BB73B00D2D463 /* HelloOC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6750E455164BB73B00D2D463 /* Build configuration list for PBXNativeTarget "HelloOC" */;
+			buildPhases = (
+				6750E442164BB73B00D2D463 /* Sources */,
+				6750E443164BB73B00D2D463 /* Frameworks */,
+				6750E444164BB73B00D2D463 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HelloOC;
+			productName = HelloOC;
+			productReference = 6750E446164BB73B00D2D463 /* HelloOC */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6750E43D164BB73B00D2D463 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = mitnk;
+			};
+			buildConfigurationList = 6750E440164BB73B00D2D463 /* Build configuration list for PBXProject "HelloOC" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 6750E43B164BB73B00D2D463;
+			productRefGroup = 6750E447164BB73B00D2D463 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6750E445164BB73B00D2D463 /* HelloOC */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6750E442164BB73B00D2D463 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6750E44E164BB73B00D2D463 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		6750E453164BB73B00D2D463 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		6750E454164BB73B00D2D463 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		6750E456164BB73B00D2D463 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HelloOC/HelloOC-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		6750E457164BB73B00D2D463 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HelloOC/HelloOC-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6750E440164BB73B00D2D463 /* Build configuration list for PBXProject "HelloOC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6750E453164BB73B00D2D463 /* Debug */,
+				6750E454164BB73B00D2D463 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6750E455164BB73B00D2D463 /* Build configuration list for PBXNativeTarget "HelloOC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6750E456164BB73B00D2D463 /* Debug */,
+				6750E457164BB73B00D2D463 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6750E43D164BB73B00D2D463 /* Project object */;
+}
