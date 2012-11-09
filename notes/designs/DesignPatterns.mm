@@ -13,8 +13,7 @@
 <icon BUILTIN="ksmiletris"/>
 <node CREATED="1352449020885" ID="ID_855111218" MODIFIED="1352449087630" TEXT="Attach additional responsibilities to an object dynamically. Decorators provide a flexible alternative to subclassing for extending functionality."/>
 </node>
-<node CREATED="1352449120922" FOLDED="true" ID="ID_1827306165" MODIFIED="1352451088243" POSITION="left" TEXT="Factory">
-<icon BUILTIN="ksmiletris"/>
+<node CREATED="1352449120922" ID="ID_1827306165" MODIFIED="1352451935412" POSITION="left" TEXT="Factory">
 <node CREATED="1352449176342" FOLDED="true" ID="ID_1931068879" MODIFIED="1352450869475" TEXT="Abstract Factory">
 <icon BUILTIN="ksmiletris"/>
 <node CREATED="1352449205198" ID="ID_1882646720" MODIFIED="1352449253508" TEXT="Provide an interface for creating families of related or depedent objects without specifying their concrete classes."/>
@@ -28,7 +27,7 @@
 <icon BUILTIN="ksmiletris"/>
 <node CREATED="1352450915001" ID="ID_22829189" MODIFIED="1352450980381" TEXT="Define the skeleton of an algorithm in an operation, deferring some steps to subclasses. Template Method lets subclasses redefine certain steps of an algorithm without changing the algorightm&apos;s structure."/>
 </node>
-<node CREATED="1352451065695" FOLDED="true" ID="ID_1123473616" MODIFIED="1352451147970" POSITION="left" TEXT="Iterator">
+<node CREATED="1352451065695" FOLDED="true" ID="ID_1123473616" MODIFIED="1352451927347" POSITION="left" TEXT="Iterator">
 <icon BUILTIN="ksmiletris"/>
 <node CREATED="1352451091102" ID="ID_573094403" MODIFIED="1352451129441" TEXT="Provide a way to access the elements of an aggregate object sequentially without exposing its underlying representation"/>
 </node>
