@@ -22,6 +22,9 @@ int main(int argc, const char * argv[])
     NSString *b = @"Hello Cocoa";
     NSLog(@"%@", b);
     
+    bool bbb = 13;
+    printf("bbb = %d\n", bbb);
+    
     BOOL aaa = 13;
     NSLog(@"aaa = %d", aaa);
     NSLog(@"aaa = YES: %d", aaa == YES);
@@ -37,8 +40,6 @@ int main(int argc, const char * argv[])
     
     is_good = 10;
     NSLog(@"is_good = %d", is_good);
-    
-    NSString = @"aa";
     
     NSLog(@"%s%@", "hello", @" world");
     return 0;
