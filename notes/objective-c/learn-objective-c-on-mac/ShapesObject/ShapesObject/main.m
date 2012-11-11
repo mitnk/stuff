@@ -1,18 +1,11 @@
-Introduction to Object-Oriented Programming
-===========================================
+//
+//  main.m
+//  ShapesObject
+//
+//  Created by mitnk on 11/11/12.
+//  Copyright (c) 2012 mitnk. All rights reserved.
+//
 
-Object-oriented programming is all about `indirection`. OOP uses 
-indirection for accessing data, just as we did in the previous 
-examples by employing variables, files, and arguments. The real 
-revolution of OOP is that it uses indirection for calling code. 
-Rather than calling a function directly, you end up calling it 
-indirectly.
-
-`id` is pointer to any kind of object.
-
-A very short demo for a Objective-C class
-
-```objective-c
 #import <Foundation/Foundation.h>
 
 typedef enum {
@@ -82,7 +75,8 @@ int main(int argc, const char * argv[])
     id shape = [Circle new];
     [shape setBounds: rect];
     [shape setFillColor: kRedColor];
+    
     [shape draw];
     return 0;
 }
-```
+
