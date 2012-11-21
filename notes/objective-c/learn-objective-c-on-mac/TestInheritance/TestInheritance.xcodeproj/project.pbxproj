@@ -1,0 +1,241 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		67B7A4B81650ADC000585E3E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67B7A4B71650ADC000585E3E /* Foundation.framework */; };
+		67B7A4BB1650ADC000585E3E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B7A4BA1650ADC000585E3E /* main.m */; };
+		67B7A4BF1650ADC000585E3E /* TestInheritance.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 67B7A4BE1650ADC000585E3E /* TestInheritance.1 */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		67B7A4B11650ADC000585E3E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				67B7A4BF1650ADC000585E3E /* TestInheritance.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		67B7A4B31650ADC000585E3E /* TestInheritance */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TestInheritance; sourceTree = BUILT_PRODUCTS_DIR; };
+		67B7A4B71650ADC000585E3E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		67B7A4BA1650ADC000585E3E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		67B7A4BD1650ADC000585E3E /* TestInheritance-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestInheritance-Prefix.pch"; sourceTree = "<group>"; };
+		67B7A4BE1650ADC000585E3E /* TestInheritance.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = TestInheritance.1; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		67B7A4B01650ADC000585E3E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67B7A4B81650ADC000585E3E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		67B7A4A81650ADC000585E3E = {
+			isa = PBXGroup;
+			children = (
+				67B7A4B91650ADC000585E3E /* TestInheritance */,
+				67B7A4B61650ADC000585E3E /* Frameworks */,
+				67B7A4B41650ADC000585E3E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		67B7A4B41650ADC000585E3E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				67B7A4B31650ADC000585E3E /* TestInheritance */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		67B7A4B61650ADC000585E3E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				67B7A4B71650ADC000585E3E /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		67B7A4B91650ADC000585E3E /* TestInheritance */ = {
+			isa = PBXGroup;
+			children = (
+				67B7A4BA1650ADC000585E3E /* main.m */,
+				67B7A4BE1650ADC000585E3E /* TestInheritance.1 */,
+				67B7A4BC1650ADC000585E3E /* Supporting Files */,
+			);
+			path = TestInheritance;
+			sourceTree = "<group>";
+		};
+		67B7A4BC1650ADC000585E3E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				67B7A4BD1650ADC000585E3E /* TestInheritance-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		67B7A4B21650ADC000585E3E /* TestInheritance */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 67B7A4C21650ADC000585E3E /* Build configuration list for PBXNativeTarget "TestInheritance" */;
+			buildPhases = (
+				67B7A4AF1650ADC000585E3E /* Sources */,
+				67B7A4B01650ADC000585E3E /* Frameworks */,
+				67B7A4B11650ADC000585E3E /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TestInheritance;
+			productName = TestInheritance;
+			productReference = 67B7A4B31650ADC000585E3E /* TestInheritance */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		67B7A4AA1650ADC000585E3E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = mitnk;
+			};
+			buildConfigurationList = 67B7A4AD1650ADC000585E3E /* Build configuration list for PBXProject "TestInheritance" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 67B7A4A81650ADC000585E3E;
+			productRefGroup = 67B7A4B41650ADC000585E3E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				67B7A4B21650ADC000585E3E /* TestInheritance */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		67B7A4AF1650ADC000585E3E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67B7A4BB1650ADC000585E3E /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		67B7A4C01650ADC000585E3E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		67B7A4C11650ADC000585E3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		67B7A4C31650ADC000585E3E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TestInheritance/TestInheritance-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		67B7A4C41650ADC000585E3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TestInheritance/TestInheritance-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		67B7A4AD1650ADC000585E3E /* Build configuration list for PBXProject "TestInheritance" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				67B7A4C01650ADC000585E3E /* Debug */,
+				67B7A4C11650ADC000585E3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		67B7A4C21650ADC000585E3E /* Build configuration list for PBXNativeTarget "TestInheritance" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				67B7A4C31650ADC000585E3E /* Debug */,
+				67B7A4C41650ADC000585E3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 67B7A4AA1650ADC000585E3E /* Project object */;
+}
