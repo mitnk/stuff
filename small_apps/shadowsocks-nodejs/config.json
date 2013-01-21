@@ -1,0 +1,7 @@
+{
+    "server":["106.187.53.10"],
+    "server_port":38388,
+    "local_port":2382,
+    "password":"breakthewall",
+    "timeout":600
+}
