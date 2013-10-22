@@ -1,7 +1,7 @@
 {
-    "server":"localhost",
-    "server_port":8388,
-    "local_port":1080,
-    "password":"barfoo!",
+    "server":"kindle.io",
+    "server_port":38388,
+    "local_port":30303,
+    "password":"breakthewall",
     "timeout":600
 }
